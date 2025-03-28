@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emily CA - Portafolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -21,7 +21,10 @@
     <section id="inicio" class="hero">
         <div class="content">
             <h2>Hola!<br>Soy Emily CA.</h2>
-            <p class="dynamic-text" id="dynamicText"></p><span class="cursor" id="cursor"></span>
+            <div class="text-container">
+              <span id="dynamicText" class="dynamic-text"></span>
+              <span id="cursor" class="cursor"></span>
+            </div>
         </div>
         <div class="image">
             <img src="images/image.png" alt="Ilustración de zorro con laptop">
@@ -37,33 +40,32 @@
         </div>
     </footer>
     <script>
-        const texts = ["Web Developer", "Ing. en Sistemas", "Freelancer"];
-        let index = 0;
-        let textElement = document.getElementById("dynamicText");
-        let cursorElement = document.getElementById("cursor");
+      const texts = ["Web Developer", "Ing. en Sistemas", "Freelancer"];
+      let index = 0;
+      const textElement = document.getElementById("dynamicText");
+      const cursorElement = document.getElementById("cursor");
 
-        function typeText(text, i = 0) {
-            if (i <= text.length) {
-                textElement.textContent = text.slice(0, i);
-                cursorElement.style.left = textElement.offsetWidth + "px";
-                setTimeout(() => typeText(text, i + 1), 100);
-            } else {
-                setTimeout(() => deleteText(text), 1000);
-            }
+      function typeText(text, i = 0) {
+        if (i <= text.length) {
+          textElement.textContent = text.slice(0, i);
+          setTimeout(() => typeText(text, i + 1), 100);
+        } else {
+          setTimeout(() => deleteText(text), 1000);
         }
+      }
 
-        function deleteText(text, i = text.length) {
-            if (i >= 0) {
-                textElement.textContent = text.slice(0, i);
-                cursorElement.style.left = textElement.offsetWidth + "px";
-                setTimeout(() => deleteText(text, i - 1), 50);
-            } else {
-                index = (index + 1) % texts.length;
-                setTimeout(() => typeText(texts[index]), 500);
-            }
+      function deleteText(text, i = text.length) {
+        if (i >= 0) {
+          textElement.textContent = text.slice(0, i);
+          setTimeout(() => deleteText(text, i - 1), 50);
+        } else {
+          index = (index + 1) % texts.length;
+          setTimeout(() => typeText(texts[index]), 500);
         }
+      }
 
-        typeText(texts[index]);
+      // Inicia la animación
+      typeText(texts[index]);
     </script>
 </body>
 </html>
