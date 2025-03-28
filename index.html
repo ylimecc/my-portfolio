@@ -59,8 +59,12 @@
           textElement.textContent = text.slice(0, i);
           setTimeout(() => deleteText(text, i - 1), 50);
         } else {
+          cursorElement.style.opacity = '0'; // Oculta el cursor con suavidad
           index = (index + 1) % texts.length;
-          setTimeout(() => typeText(texts[index]), 500);
+          setTimeout(() => {
+            cursorElement.style.opacity = '1'; // Muestra el cursor
+            typeText(texts[index]);
+          }, 200); // Retraso antes de la siguiente palabra
         }
       }
 
