@@ -10,7 +10,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px;
+    padding: 30px;
     background-color: #7b5dc8;
 }
 
@@ -37,7 +37,7 @@ nav ul li a {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 50px;
+    padding: 60px;
     background-color: #744daa;
     height: 60vh;
 }
@@ -59,7 +59,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 38px;
+    height: 30px;
 }
 .social img {
     width: 30px;
@@ -67,30 +67,34 @@ footer {
     padding: 0px;
 }
 
-.dynamic-text {
+.text-container {
+    display: inline-block;
+    position: relative; /* Contenedor de referencia para el cursor */
+  }
+  
+  .dynamic-text {
     font-size: 0.8em;
     font-weight: bold;
     color: #FFD700;
-    min-height: 30px;
-    overflow: hidden;
     white-space: nowrap;
     display: inline-block;
-    position: relative;
-}
-
-.cursor {
+    vertical-align: bottom; /* Alinea el texto y el cursor */
+  }
+  
+  .cursor {
     display: inline-block;
-    width: 5px;
+    width: 3px;
     height: 0.8em;
     background-color: white;
     animation: blink 0.7s infinite;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-@keyframes blink {
-    50% { background-color: transparent; }
-}
+    margin-left: 2px; /* Pequeño espacio entre texto y cursor */
+    vertical-align: bottom; /* Alineación clave */
+  }
+  
+  @keyframes blink {
+    50% { opacity: 0; } /* Más suave que `transparent` */
+  }
+
 .hero .image img {
     width: 300px;
 }
