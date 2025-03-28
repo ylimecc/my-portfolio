@@ -86,7 +86,7 @@ footer {
     width: 3px;
     height: 0.8em;
     background-color: white;
-    animation: blink 0.7s infinite;
+    animation: blink 0.8s infinite;
     margin-left: 2px; /* Pequeño espacio entre texto y cursor */
     vertical-align: bottom; /* Alineación clave */
   }
