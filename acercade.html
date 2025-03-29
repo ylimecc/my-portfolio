@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emily CA - Portafolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="acercade.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <h1>Ylimecc</h1>
+        <nav>
+          <div class="menu-toggle">☰</div>
+          <ul id="menu">
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="acercade.html">Acerca de</a></li>
+              <li><a href="my-proyects.html">Mis Proyectos</a></li>
+              <li><a href="blog.html">Blogs</a></li>
+          </ul>
+      </nav>
+    </header>
+
+    <section id="acerca" class="about-section">
+        <div class="about-container">
+            <!-- Foto/avatar -->
+            <div class="about-image" data-aos="fade-right">
+                <img src="images/girly.png" alt="Emily CA" class="profile-img">
+                <div class="decoration-circle"></div>
+            </div>
+            
+            <!-- Texto "Acerca de mí" -->
+            <div class="about-content" data-aos="fade-left">
+                <h2>Acerca de <span class="highlight">mí</span></h2>
+                <p class="intro-text">
+                    ¡Hola! Soy Emily, <span class="typing-text"></span>
+                </p>
+                <div class="about-details">
+                    <p>Soy Ingeniera en Sistemas apasionada por el desarrollo web y la creación de experiencias digitales memorables. Me encanta aprender tecnologías nuevas y compartir mis conocimientos.</p>
+                    
+                    <div class="skills">
+                        <h3>Mis habilidades</h3>
+                        <div class="skill-tags">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">React</span>
+                            <span class="tag">UI/UX</span>
+                            <span class="tag">Git</span>
+                        </div>
+                    </div>
+                    
+                    <a href="my-proyects.html" class="cta-button">Ver mis proyectos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+        document.querySelector('nav ul').classList.toggle('show');
+        });
+
+      // Cierra el menú al hacer clic en un enlace
+        document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', function() {
+          document.querySelector('nav ul').classList.remove('show');
+        });
+      });
+      // Cambia el color del cursor al pasar el mouse sobre él
+
+    </script>
+</body>
+<footer>
+    <p>Designed by Ylimecc | Copyright &copy; 2025</p>
+    <div class="social">
+        <a href="#"><img src="images/tiktok.png" alt="TikTok"></a>
+        <a href="#"><img src="images/fb.png" alt="Facebook"></a>
+        <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="images/twitch.png" alt="Twitch"></a>
+    </div>
+</footer>
+</html>
