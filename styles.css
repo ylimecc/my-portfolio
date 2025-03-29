@@ -18,6 +18,10 @@ header h1 {
     margin: 0;
 }
 
+nav {
+    position: relative;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -43,7 +47,7 @@ nav ul li a {
 }
 
 .content {
-    font-size: 2em;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
     font-weight: bold;
     text-align: left;
     position: relative;
@@ -53,6 +57,13 @@ nav ul li a {
     padding-left: 50px;
     width: 400px;
 }
+
+.menu-toggle {
+    display: none; /* Oculto por defecto */
+    cursor: pointer;
+    font-size: 2rem;
+}
+
 footer {
     background-color: #7b5dc8;
     padding: 20px;
@@ -73,12 +84,14 @@ footer {
   }
   
   .dynamic-text {
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: bold;
     color: #FFD700;
     white-space: nowrap;
     display: inline-block;
     vertical-align: bottom; /* Alinea el texto y el cursor */
+    white-space: nowrap; /* Evita el salto de línea */
+    overflow: hidden; /* Oculta el texto que se desborda */
   }
   
   .cursor {
@@ -99,13 +112,87 @@ footer {
     width: 300px;
 }
 footer {
+    flex-direction: column;
     background-color: #756894;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: auto;
 }
 .social img {
     width: 30px;
     margin: 0 10px;
 }
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: left;
+        height: 60vh;
+    }
+    
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #7b5dc8;
+        width: 200px;
+        flex-direction: column;
+        z-index: 1000;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    
+    nav ul.show {
+        display: flex;
+    }
+    
+    nav ul li {
+        margin: 15px 0;
+        text-align: right;
+        padding: 0 20px;
+    }
+    
+    .dynamic-text {
+        font-size: 0.9em;
+    }
+}
+
+    @media (min-width: 768px) {
+        .hero {
+            flex-direction: srow;
+            justify-content: space-evenly;
+            text-align: left;
+            height: 60vh;
+        }
+    }
+
+    .image img {
+        max-width: 100%;
+        padding: 30px 0 0 0;
+        width: 100%;
+    }
+
+    @media (min-width: 768px) {
+        .image img {
+            padding-left: 50px;
+            width: 300px;
+        }
+    }
+
+  @media (min-width: 600px) {
+    footer {
+      flex-direction: row;
+    }
+  }
+  
+  .social {
+    margin-top: 15px;
+  }
+
