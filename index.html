@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emily CA - Portafolio</title>
     <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <header>
         <h1>Ylimecc</h1>
         <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#acerca">Acerca de</a></li>
-                <li><a href="#proyectos">Mis Proyectos</a></li>
-                <li><a href="#blogs">Blogs</a></li>
-            </ul>
-        </nav>
+          <div class="menu-toggle">☰</div>
+          <ul id="menu">
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#acerca">Acerca de</a></li>
+              <li><a href="#proyectos">Mis Proyectos</a></li>
+              <li><a href="#blogs">Blogs</a></li>
+          </ul>
+      </nav>
     </header>
     <section id="inicio" class="hero">
         <div class="content">
@@ -70,6 +72,19 @@
 
       // Inicia la animación
       typeText(texts[index]);
+
+      document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('show');
+});
+
+      // Cierra el menú al hacer clic en un enlace
+      document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', function() {
+          document.querySelector('nav ul').classList.remove('show');
+        });
+      });
+      // Cambia el color del cursor al pasar el mouse sobre él
+
     </script>
 </body>
 </html>
